@@ -1,10 +1,9 @@
 FROM alpine:latest
 
 # NodeJS, thanks to mhart/alpine-node  
-ENV NODEJS_VERSION v5.6.0
-ENV NPM_VERSION 3
-# fully static compilation & related cleaning seems to be a problem for docker public registry?
-# ENV CONFIG_FLAGS "--fully-static" DEL_PKGS "libgcc libstdc++" RM_DIRS /usr/include
+ENV VERSION=v4.3.1 NPM_VERSION=2
+# ENV NODEJS_VERSION v5.6.0 NPM_VERSION 3 # doesn't compile on docker public registry
+ENV CONFIG_FLAGS "--fully-static" DEL_PKGS "libgcc libstdc++" RM_DIRS /usr/include
 
 RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxctl libgcc libstdc++ 
 RUN curl -sSL https://nodejs.org/dist/${NODEJS_VERSION}/node-${NODEJS_VERSION}.tar.gz | tar -xz && \
