@@ -1,7 +1,8 @@
 FROM alpine:latest
+MAINTAINER rgarrigue
 
 # NodeJS, thanks to mhart/alpine-node  
-ENV VERSION=v4.3.1 NPM_VERSION=2
+ENV NODEJS_VERSION v4.3.1 NPM_VERSION 2
 # ENV NODEJS_VERSION v5.6.0 NPM_VERSION 3 # doesn't compile on docker public registry
 ENV CONFIG_FLAGS "--fully-static" DEL_PKGS "libgcc libstdc++" RM_DIRS /usr/include
 
