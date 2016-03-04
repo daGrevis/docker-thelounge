@@ -1,11 +1,9 @@
-FROM alpine:3.3
+FROM alpine:latest
 MAINTAINER rgarrigue
 
 # NodeJS, thanks to mhart/alpine-node  
+# --without-snapshot is mandatory to compile over hub.docker.com (?)
 ENV VERSION=v5.7.1 NPM_VERSION=3 CONFIG_FLAGS="--without-snapshot"
-# For base builds
-# ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
-# ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
 
 RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxctl libgcc libstdc++ && \
   curl -sSL https://nodejs.org/dist/${VERSION}/node-${VERSION}.tar.gz | tar -xz && \
@@ -23,6 +21,8 @@ RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxc
   rm -rf /etc/ssl /node-${VERSION} ${RM_DIRS} \
     /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
     /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html
+
+# Thelounge, taken from official doc
 
 # Create a non-root user for lounge to run in.
 RUN adduser -D lounge
