@@ -2,7 +2,7 @@ FROM alpine:3.3
 MAINTAINER rgarrigue
 
 # NodeJS, thanks to mhart/alpine-node  
-ENV VERSION=v5.7.1 NPM_VERSION=3
+ENV VERSION=v5.7.1 NPM_VERSION=3 CONFIG_FLAGS="--without-snapshot"
 # For base builds
 # ENV CONFIG_FLAGS="--without-npm" RM_DIRS=/usr/include
 # ENV CONFIG_FLAGS="--fully-static --without-npm" DEL_PKGS="libgcc libstdc++" RM_DIRS=/usr/include
