@@ -28,11 +28,11 @@ RUN apk add --no-cache curl make gcc g++ binutils-gold python linux-headers paxc
 RUN adduser -D lounge
 
 # Needed for Node.js' setup
-ENV HOME /home/lounge
+# ENV HOME /home/lounge
 
 # Customize this to specify where The Lounge puts its data.
 # To link a data container, have it expose /home/lounge/data
-ENV LOUNGE_HOME /home/lounge
+# ENV LOUNGE_HOME /home/lounge
 
 RUN npm install -g thelounge
  
@@ -43,4 +43,4 @@ EXPOSE 9000
 USER lounge
 
 # Don't use an entrypoint here. It makes debugging difficult.
-CMD lounge --home $LOUNGE_HOME
+CMD lounge # --home $LOUNGE_HOME
