@@ -1,2 +1,4 @@
 # docker-thelounge
-Alpine based docker for The Lounge
+==================
+
+Alpine based docker for [The Lounge](https://thelounge.github.io)
