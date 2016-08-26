@@ -19,13 +19,13 @@ Run Lounge in public mode:
 docker run -d --name lounge -p 9000:9000 mylounge
 ```
 
-Run `lounge add daGrevis`:
+Run `lounge add daGrevis` to add a user:
 
 ```
 docker run --rm -it -v ~/.lounge:/home/lounge/.lounge mylounge lounge add daGrevis
 ```
 
-Run Lounge in private mode:
+Run Lounge with config from `~/.lounge` in private mode:
 
 ```
 docker run -d --name lounge -p 9000:9000 -v ~/.lounge:/home/lounge/.lounge mylounge lounge --private start
