@@ -22,11 +22,11 @@ docker run -d --name lounge -p 9000:9000 mylounge
 Run `lounge add daGrevis` to add a user:
 
 ```
-docker run --rm -it -v ~/.lounge:/home/lounge/.lounge mylounge lounge add daGrevis
+docker run --rm -it -v ~/.lounge:/root/.lounge mylounge lounge add daGrevis
 ```
 
 Run Lounge with config from `~/.lounge` in private mode:
 
 ```
-docker run -d --name lounge -p 9000:9000 -v ~/.lounge:/home/lounge/.lounge mylounge lounge --private start
+docker run -d --name lounge -p 9000:9000 -v ~/.lounge:/root/.lounge mylounge lounge --private start
 ```

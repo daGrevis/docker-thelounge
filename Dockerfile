@@ -15,8 +15,5 @@ RUN git clone https://github.com/thelounge/lounge.git lounge-repo && \
   mv client/ /usr/lib/node_modules/thelounge/client && \
   cd && rm -rf lounge-repo
 
-RUN adduser -D lounge
-USER lounge
-
 EXPOSE 9000
 CMD lounge
