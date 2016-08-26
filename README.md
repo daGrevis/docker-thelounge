@@ -1,7 +1,7 @@
 # docker-thelounge
 
 Alpine Linux Docker image for 
-[thelounge@lounge](https://github.com/thelounge/lounge)@master
+[thelounge](https://github.com/thelounge/lounge)@[master](https://github.com/thelounge/lounge/commits/master)
 
 ## How
 
