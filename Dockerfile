@@ -34,7 +34,7 @@ RUN adduser -D lounge
 # To link a data container, have it expose /home/lounge/data
 # ENV LOUNGE_HOME /home/lounge
 
-RUN npm install -g thelounge
+RUN npm install -g --save https://github.com/thelounge/lounge/tarball/master
  
 # Expose HTTP
 EXPOSE 9000
