@@ -10,5 +10,13 @@ Clone this Git repo and build the image with `docker build -t lounge .`.
 Here's how you can run `lounge -h` inside Docker:
 
 ~~~
-docker run --rm -v ~/.lounge:/lounge lounge lounge --home /lounge -h
+docker run --rm -it -v ~/.lounge:/lounge lounge lounge --home /lounge -h
 ~~~
+
+Create a Lounge user like this:
+
+~~~
+docker run --rm -it -v ~/.lounge:/lounge lounge lounge --home /lounge add daGrevis
+~~~
+
+That will also create config in `~/.lounge` on your host-machine.
