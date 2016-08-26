@@ -5,18 +5,28 @@ Alpine Linux Docker image for
 
 ## How
 
-Clone this Git repo and build the image with `docker build -t lounge .`.
+### Build
 
-Here's how you can run `lounge -h` inside Docker:
+Clone this Git repo and build the image with `docker build -t mylounge .`.
 
-~~~
-docker run --rm -it -v ~/.lounge:/lounge lounge lounge --home /lounge -h
-~~~
+You can change `GIT_REV` in `Dockerfile` to any branch, tag or commit hash.
 
-Create a Lounge user like this:
+### Run
 
-~~~
-docker run --rm -it -v ~/.lounge:/lounge lounge lounge --home /lounge add daGrevis
-~~~
+Run Lounge in public mode:
 
-That will also create config in `~/.lounge` on your host-machine.
+```
+docker run -d --name lounge -p 9000:9000 mylounge
+```
+
+Run `lounge add daGrevis`:
+
+```
+docker run --rm -it -v ~/.lounge:/home/lounge/.lounge mylounge lounge add daGrevis
+```
+
+Run Lounge in private mode:
+
+```
+docker run -d --name lounge -p 9000:9000 -v ~/.lounge:/home/lounge/.lounge mylounge lounge --private start
+```
