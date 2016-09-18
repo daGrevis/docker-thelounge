@@ -1,7 +1,7 @@
 FROM mhart/alpine-node:6
 MAINTAINER daGrevis
 
-ENV GIT_REV="master"
+ARG GIT_REV="master"
 
 RUN apk add --no-cache openssh git
 
