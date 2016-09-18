@@ -7,7 +7,11 @@ Alpine Linux Docker image for
 
 Clone this Git repo and build the image with `docker build -t mylounge .`.
 
-You can change `GIT_REV` in `Dockerfile` to any branch, tag or commit hash.
+You can set `GIT_REV` to any branch, tag or commit hash when building image like this:
+
+```
+docker build --build-arg GIT_REV=v2.0.0-pre.7 -t mylounge .
+```
 
 ## Running Container
 
