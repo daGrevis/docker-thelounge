@@ -10,10 +10,11 @@ RUN apk add --no-cache make gcc g++ python && \
   cd lounge && \
   git reset --hard $GIT_REV && \
   npm install && \
+  npm link && \
   npm run build && \
   apk del make gcc g++ python
 
 WORKDIR /lounge
 
 EXPOSE 9000
-CMD npm run start
+CMD lounge start

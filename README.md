@@ -22,7 +22,7 @@ docker run -d --name lounge -v ~/.lounge:/root/.lounge -p 9000:9000 mylounge
 Run `add daGrevis` to add a user:
 
 ```
-docker run --rm -it -v ~/.lounge:/root/.lounge mylounge node index add daGrevis
+docker run --rm -it -v ~/.lounge:/root/.lounge mylounge lounge add daGrevis
 ```
 
 To run Lounge in private mode, set `public` to `false` in `~/.lounge/config.js`
