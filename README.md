@@ -10,32 +10,27 @@ Clone this Git repo and build the image with `docker build -t mylounge .`.
 You can set `GIT_REV` to any branch, tag or commit hash when building image like this:
 
 ```
-docker build --build-arg GIT_REV=v2.0.0-pre.7 -t mylounge .
+docker build --build-arg GIT_REV=v2.4.0 -t mylounge .
 ```
 
 ## Running Container
 
-Run Lounge in public mode:
-
 ```
-docker run -d --name lounge -p 9000:9000 mylounge
+docker run -d --name lounge -v ~/.lounge:/root/.lounge -p 9000:9000 mylounge
 ```
 
-Run `lounge add daGrevis` to add a user:
+Run `add daGrevis` to add a user:
 
 ```
-docker run --rm -it -v ~/.lounge:/root/.lounge mylounge lounge add daGrevis
+docker run --rm -it -v ~/.lounge:/root/.lounge mylounge lounge node index add daGrevis
 ```
 
-Run Lounge with config from `~/.lounge` in private mode:
-
-```
-docker run -d --name lounge -p 9000:9000 -v ~/.lounge:/root/.lounge mylounge lounge --private start
-```
+To run Lounge in private mode, set `public` to `false` in `~/.lounge/config.js`
+and restart container.
 
 ## Deployment
 
-Try [docker-compose](https://github.com/daGrevis/daGrev.is/blob/09375a84860e44eca74fc495e5f95f63a7e662a2/docker-compose.yml#L30-L36) for managing deployments.
+Try [docker-compose](https://github.com/daGrevis/daGrev.is/blob/f9f3fab452759b517520f72932bfca47e3e3abc4/docker-compose.yml#L51-L57) for managing deployments.
 
 Here's what I do:
 
