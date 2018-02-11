@@ -10,7 +10,7 @@ Clone this Git repo and build the image with `docker build -t mylounge .`.
 You can set `GIT_REV` to any branch, tag or commit hash when building image like this:
 
 ```
-docker build --build-arg GIT_REV=v2.4.0 -t mylounge .
+docker build --build-arg GIT_REV=v2.7.0 -t mylounge .
 ```
 
 ## Running Container
